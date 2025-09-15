@@ -28,3 +28,4 @@ $ podman load -i /tmp/general-ee.tar		#Load image to container images
 ```
 And then you can use this custom execution environment in Oracle Linux Automation Manager
 
+Reference DOC link: [Execution Environment Definition V3](https://ansible.readthedocs.io/projects/builder/en/stable/definition/)
