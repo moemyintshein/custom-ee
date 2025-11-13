@@ -1,13 +1,10 @@
 # Creating custom ansible execution environment
 
-### Clone repo and create python virtual environment
+### Clone repo and build image with podman
 ```
 $ git clone https://github.com/moemyintshein/custom-ee.git
 $ cd custom-ee/
-$ python3 -m venv venv  #create virtual env
-$ source venv/bin/activate  #activate virtual env
-$ pip install ansible ansible-builder   #install ansible-core and ansible-builder
-$ ansible-builder build --tag custom-ee:latest  #build image with tag latest
+$ podman build -t localhost/custom-ee:latest -f Containerfile .
 $ podman images
 $ podman run --rm -it localhost/custom-ee:latest ansible-galaxy collection list   #you can check galaxy collection list in builded images
 $ podman run -it localhost/custom-ee:latest /bin/bash 	#To check xml module in image ( #ansible-doc xml )
